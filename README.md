@@ -1,14 +1,26 @@
-# Build Jenkins and Deploy to Elastic Beanstalk
+<p align="center">
+<img src="https://github.com/kura-labs-org/kuralabs_deployment_1/blob/main/Kuralogo.png">
+</p>
+<h1 align="center">C4_deployment-2<h1> 
 
-## In this Deployment, we are going to build our own Jenkins pipeline to build and test our application code and then manually deploy it to Elastic Beanstalk. To do this, we'll be using Amazon EC2 (Elastic Compute Cloud) instance, to serve as our virtual machine. Once our instance is created, we'll install Jenkins and all the dependencies required to run our code. Once our code sucessfully runs, we'll navigate to Elastic Beanstalk to deploy our application. In order to complete this, we'll need the following:
--  AWS Account
--  AWS CLI
--  Jenkins
--  GitHub
--  Jenkins
+Demonstrate your ability to run a Jenkins build and manually deploy to Elastic Beanstalk.
 
-# Linux
+- Create a separate GitHub repository for this application 
 
-## Set Up Your Virtual Environment:
+- Download the files from this repository and upload them to your newly created repository 
 
-In order to complete this project, it is necessary to set up a virtual environment. In order to achieve this, first, create a free [AWS account](https://aws.amazon.com/) and then create a virtual server using the Ubuntu Server OS.
+- Be sure to follow the deployment instructions from this Repository  
+
+- Document your progress in a .md file in your repository. Also, document any issues you may run into and what you did to fix them.
+  
+- Make sure your documentation includes these sections:
+  - Purpose
+  - Issues
+  - Steps
+  - System Diagram
+  - Optimization (How would make this deployment more efficient)
+
+- Lastly, save your documentation and diagram into your repository. Submit your repository link to the LMS
+
+## Deployment instructions Link:
+-  [Link to instructions: https://github.com/kura-labs-org/C4_deployment-2/blob/main/Deployment-instructions.md
