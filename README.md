@@ -35,24 +35,28 @@ First, we need to set up a virtual environment to run Jenkins and our pipeline.
 Next, we'll install Jenkins on our EC2 instance:
 
 1. Add the Jenkins apt repository key:
-  `$ curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee \
+
+`$ curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee \
   /usr/share/keyrings/jenkins-keyring.asc > /dev/null` 
 
-2. Add the Debian package repository address:
-  `$ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+3. Add the Debian package repository address:
+
+`$ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
   https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
   /etc/apt/sources.list.d/jenkins.list > /dev/null` 
 
-3. Update apt and install Jenkins:
-  `$ sudo apt-get update` 
-  `$ sudo apt-get install jenkins` 
+5. Update apt and install Jenkins:
 
-4. Start Jenkins service:
-  `$ sudo systemctl start jenkins` 
+`$ sudo apt-get update` 
+`$ sudo apt-get install jenkins` 
 
-5. Access the Jenkins web UI at `http://your_server:8080` and unlock it.
+7. Start Jenkins service:
 
-6. Install suggested plugins to get started. In this project, the Jenkins plugin _"Pipeline Utility Steps"
+`$ sudo systemctl start jenkins` 
+
+8. Access the Jenkins web UI at `http://your_server:8080` and unlock it.
+
+9. Install suggested plugins to get started. In this project, the Jenkins plugin _"Pipeline Utility Steps"
 _
 
 ### Create Pipeline
@@ -86,10 +90,12 @@ Some problems encountered while creating the Jenkins pipeline:
 - My build would get stuck at the Packaging of the output files stage and never complete.
   
 - Checking the Jenkins logs showed the error:
-  `$ ERROR: Failed to bind to server socket: tcp://0.0.0.0:18050 due to: java.net.BindException: The socket name is already in use`
+
+`$ ERROR: Failed to bind to server socket: tcp://0.0.0.0:18050 due to: java.net.BindException: The socket name is already in use`
 
 - This was caused by the Jenkinsfile having a input step to wait for manual input:
-  `$ input(message: 'Proceed to the next step?', ok: 'Continue')'
+
+`$ input(message: 'Proceed to the next step?', ok: 'Continue')'
 
 - The build would hang until clicking the "Continue" button in Jenkins to proceed past the input step.
 
@@ -101,7 +107,7 @@ Our pipeline will do the following:
 1. Check out the code from GitHub.
 2. Build the Python application.
 3. Archive the source into a ZIP file.
-4. Save artifact to a location similar to `/var/lib/jenkins/jobs/myapp/builds/1/archive/myapp.zip`
+4. Save the artifact to a location similar to `/var/lib/jenkins/jobs/myapp/builds/1/archive/myapp.zip`
 
 ## Optimization
 Some ways this deployment could be improved:
