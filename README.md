@@ -59,6 +59,9 @@ Next, we'll install Jenkins on our EC2 instance:
 9. Install suggested plugins to get started. In this project, the Jenkins plugin _"Pipeline Utility Steps"
 _
 
+<img width="972" alt="Screen Shot 2023-08-24 at 8 40 30 AM" src="https://github.com/belindadunu/Build-and-Test-Code-with-Jenkins-then-Manually-Deploy-Your-Application-to-Elastic-Beanstalk/assets/139175163/e64684eb-734d-47d1-9699-eadd11eb31d7">
+
+
 ### Create Pipeline
 
 Now we can create a pipeline in Jenkins for building and testing our code:
@@ -83,6 +86,8 @@ Once our pipeline runs successfully, we can deploy manually to Elastic Beanstalk
 
 4. Access the running application.
 
+<img width="1420" alt="Screen Shot 2023-08-17 at 8 54 11 AM" src="https://github.com/belindadunu/Build-and-Test-Code-with-Jenkins-then-Manually-Deploy-Your-Application-to-Elastic-Beanstalk/assets/139175163/a6580608-305b-4b37-b394-fcdb1dd37301">
+
 ### Troubleshooting:
 
 Some problems encountered while creating the Jenkins pipeline:
@@ -93,21 +98,29 @@ Some problems encountered while creating the Jenkins pipeline:
 
 `$ ERROR: Failed to bind to server socket: tcp://0.0.0.0:18050 due to: java.net.BindException: The socket name is already in use`
 
-- This was caused by the Jenkinsfile having a input step to wait for manual input:
+<img width="1302" alt="Screen Shot 2023-08-24 at 8 55 43 AM" src="https://github.com/belindadunu/Build-and-Test-Code-with-Jenkins-then-Manually-Deploy-Your-Application-to-Elastic-Beanstalk/assets/139175163/6702ae1a-ab54-4506-9de0-528357caff19">
 
-`$ input(message: 'Proceed to the next step?', ok: 'Continue')'
+- This was caused by the Jenkinsfile having an input step to wait for manual input:
+
+`$ input(message: 'Proceed to the next step?', ok: 'Continue')` 
+
+<img width="963" alt="Screen Shot 2023-08-24 at 10 22 12 AM" src="https://github.com/belindadunu/Build-and-Test-Code-with-Jenkins-then-Manually-Deploy-Your-Application-to-Elastic-Beanstalk/assets/139175163/fc6b4b24-f4a4-45ba-8774-e3f38a5fae1d">
 
 - The build would hang until clicking the "Continue" button in Jenkins to proceed past the input step.
 
 - Removing the unnecessary input step allowed the packaging stage to complete automatically.
 
-
+<img width="1302" alt="Screen Shot 2023-08-24 at 10 51 17 AM" src="https://github.com/belindadunu/Build-and-Test-Code-with-Jenkins-then-Manually-Deploy-Your-Application-to-Elastic-Beanstalk/assets/139175163/ccfea424-a7e8-4f0a-a843-39ddc64bb908">
 
 Our pipeline will do the following: 
 1. Check out the code from GitHub.
 2. Build the Python application.
 3. Archive the source into a ZIP file.
 4. Save the artifact to a location similar to `/var/lib/jenkins/jobs/myapp/builds/1/archive/myapp.zip`
+
+## System Diagram
+
+![Deployment2 drawio](https://github.com/belindadunu/Build-and-Test-Code-with-Jenkins-then-Manually-Deploy-Your-Application-to-Elastic-Beanstalk/assets/139175163/e5d55d56-d295-4e05-aafa-45aa0a86421b)
 
 ## Optimization
 Some ways this deployment could be improved:
