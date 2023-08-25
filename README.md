@@ -1,4 +1,4 @@
-# Jenkins Pipeline for Python App Deployment
+# Jenkins Pipeline for Python Application Deployment
 
 ## Overview
 
