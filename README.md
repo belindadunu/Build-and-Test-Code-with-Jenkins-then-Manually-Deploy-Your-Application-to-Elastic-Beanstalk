@@ -117,6 +117,7 @@ Our pipeline will do the following:
 2. Build the Python application.
 3. Archive the source into a ZIP file.
 4. Save the artifact to a location similar to `/var/lib/jenkins/jobs/myapp/builds/1/archive/myapp.zip`
+5. From here, I extracted the generated ZIP file to validate that Jenkins was packaging the application correctly.
 
 ## System Diagram
 
