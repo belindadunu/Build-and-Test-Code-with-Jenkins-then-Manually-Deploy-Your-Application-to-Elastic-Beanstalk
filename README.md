@@ -74,6 +74,14 @@ Now we can create a pipeline in Jenkins for building and testing our code:
 
 4. Run the pipeline and observe it checking out code, building the app, and archiving the output.
 
+Our pipeline did the following: 
+
+1. Checked out the code from GitHub.
+2. Built the Python application.
+3. Archived the source into a ZIP file.
+4. Saved the artifact to a location similar to `/var/lib/jenkins/jobs/myapp/builds/1/archive/myapp.zip`
+5. From here, I extracted the generated ZIP file to validate that Jenkins was packaging the application correctly.
+
 ### Deploy to Elastic Beanstalk
 
 Once our pipeline runs successfully, we can deploy manually to Elastic Beanstalk:
@@ -111,13 +119,6 @@ Some problems encountered while creating the Jenkins pipeline:
 - Removing the unnecessary input step allowed the packaging stage to complete automatically.
 
 <img width="1302" alt="Screen Shot 2023-08-24 at 10 51 17 AM" src="https://github.com/belindadunu/Build-and-Test-Code-with-Jenkins-then-Manually-Deploy-Your-Application-to-Elastic-Beanstalk/assets/139175163/ccfea424-a7e8-4f0a-a843-39ddc64bb908">
-
-Our pipeline will do the following: 
-1. Check out the code from GitHub.
-2. Build the Python application.
-3. Archive the source into a ZIP file.
-4. Save the artifact to a location similar to `/var/lib/jenkins/jobs/myapp/builds/1/archive/myapp.zip`
-5. From here, I extracted the generated ZIP file to validate that Jenkins was packaging the application correctly.
 
 ## System Diagram
 
