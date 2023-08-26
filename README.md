@@ -126,9 +126,10 @@ Some problems encountered while creating the Jenkins pipeline:
 
 ## Optimization
 Some ways this deployment could be improved:
-- Use a Docker container for Jenkins for portability and consistency
-- Add automated tests in the pipeline before packaging
+- Use a Docker container for Jenkins for portability and consistency.
+- Add automated tests in the pipeline before packaging.
   - Remove manual input steps: The pipeline had an input step to pause for manual input. This should be automated by removing the input or using a time-based wait instead.
-- Leverage Infrastructure-as-Code tools like Terraform to provision AWS resources
+- Leverage Infrastructure-as-Code tools like Terraform to provision AWS resources.
+- Integrate AWS CLI with Jenkins for automated deployments: Rather than manual deployment through the AWS console, the AWS CLI could be integrated into the Jenkins pipeline to enable.   fully automated deployments to Elastic Beanstalk. This provides benefits like repeatability, auditing, and consistency. The AWS CLI commands can be incorporated into scripts or        directly in the Jenkinsfile stages
 
 Overall, this project successfully implemented a Jenkins CI/CD pipeline integrated with GitHub and Elastic Beanstalk for automated application delivery!
