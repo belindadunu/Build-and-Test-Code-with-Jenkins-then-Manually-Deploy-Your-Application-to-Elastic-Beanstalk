@@ -122,7 +122,7 @@ Some problems encountered while creating the Jenkins pipeline:
 
 ## System Diagram
 
-![Deployment2 drawio](https://github.com/belindadunu/Build-and-Test-Code-with-Jenkins-then-Manually-Deploy-Your-Application-to-Elastic-Beanstalk/assets/139175163/e5d55d56-d295-4e05-aafa-45aa0a86421b)
+![Deployment2 drawio (1)](https://github.com/belindadunu/Build-and-Test-Code-with-Jenkins-then-Manually-Deploy-Your-Application-to-Elastic-Beanstalk/assets/139175163/60a0f995-323f-470c-9712-1778d5b0c45b)
 
 ## Optimization
 Some ways this deployment could be improved:
